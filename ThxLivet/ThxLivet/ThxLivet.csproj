@@ -100,9 +100,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="emoihamedorikun.jpg" />
-    <Content Include="emoi_haikei.jpg" />
-    <Content Include="hamedorikun.png" />
+    <Resource Include="Image\emoihamedorikun.jpg" />
+    <Resource Include="Image\emoi_haikei.jpg" />
+    <Resource Include="Image\hamedorikun.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
