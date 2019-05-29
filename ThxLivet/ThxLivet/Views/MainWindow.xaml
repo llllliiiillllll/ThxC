@@ -9,7 +9,7 @@
         Title="MainWindow" Height="627" Width="674">
 
     <Window.Background>
-        <ImageBrush ImageSource = "C:\Users\mae_do\Source\Repos\ThxC\ThxLivet\ThxLivet\emoi_haikei.jpg" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource = "../Image/emoi_haikei.jpg" Stretch="UniformToFill"/>
     </Window.Background>
 
     <Window.DataContext>
@@ -44,14 +44,14 @@
                         <BulletDecorator>
                             <BulletDecorator.Bullet>
                                 <!--オフ状態のイメージ-->
-                                <Image Name="TickImage" Source="C:\Users\mae_do\Source\Repos\ThxC\ThxLivet\ThxLivet\hamedorikun.png" Grid.Column="0"/>
+                                <Image Name="TickImage" Source="../Image/hamedorikun.png" Grid.Column="0"/>
                             </BulletDecorator.Bullet>
                             <ContentPresenter VerticalAlignment="Center" Grid.Column="1"/>
                         </BulletDecorator>
                         <ControlTemplate.Triggers>
                             <!--オン状態のイメージ-->
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="TickImage" Property="Source" Value="C:\Users\mae_do\Source\Repos\ThxC\ThxLivet\ThxLivet\emoihamedorikun.jpg"/>
+                                <Setter TargetName="TickImage" Property="Source" Value="../Image/emoihamedorikun.jpg"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

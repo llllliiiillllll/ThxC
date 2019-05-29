@@ -34,6 +34,7 @@
     <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -100,9 +101,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="emoihamedorikun.jpg" />
-    <Content Include="emoi_haikei.jpg" />
-    <Content Include="hamedorikun.png" />
+    <Resource Include="Image\emoihamedorikun.jpg" />
+    <Resource Include="Image\emoi_haikei.jpg" />
+    <Resource Include="Image\hamedorikun.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
