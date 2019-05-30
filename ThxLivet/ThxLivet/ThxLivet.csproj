@@ -53,12 +53,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+
+    <Compile Include="Models\Busyo.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Ka.cs" />
+    <Compile Include="Models\TNKCD.cs" />
+    <Compile Include="Models\Work.cs" />
+
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\CreateUserModel.cs" />
     <Compile Include="Models\UserEditModel.cs" />
     <Compile Include="Models\UserPropertiesModel.cs" />
+
     <Compile Include="Services\IRestService.cs" />
     <Compile Include="Services\RestService.cs" />
+    <Compile Include="ViewModels\JireiViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\UserPropertiesViewModel.cs" />
@@ -67,6 +76,10 @@
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+
+    <Compile Include="Views\Jirei.xaml.cs">
+      <DependentUpon>Jirei.xaml</DependentUpon>
+
     <Compile Include="Views\UserProperties.xaml.cs">
       <DependentUpon>UserProperties.xaml</DependentUpon>
     </Compile>
@@ -92,6 +105,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
+    <Page Include="Views\Jirei.xaml">
+
     <Page Include="Views\UserProperties.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,12 +117,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserEdit.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

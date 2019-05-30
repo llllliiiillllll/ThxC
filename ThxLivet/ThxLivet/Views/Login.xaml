@@ -6,11 +6,14 @@
         xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
         xmlns:v="clr-namespace:ThxLivet.Views"
         xmlns:vm="clr-namespace:ThxLivet.ViewModels"
-        Title="Login" Height="627" Width="729">
+        Title="Login" Height="350" Width="525">
+
+
 
     <Window.Background>
         <ImageBrush ImageSource = "../Image/emoi_haikei.jpg" Stretch="UniformToFill"/>
     </Window.Background>
+
 
     <Window.DataContext>
         <vm:LoginViewModel/>
@@ -32,29 +35,26 @@
             <l:DataContextDisposeAction/>
         </i:EventTrigger>
 
+        <l:InteractionMessageTrigger MessageKey="ShowLogon" Messenger="{Binding Messenger}">
+            <l:WindowInteractionMessageAction/>
+        </l:InteractionMessageTrigger>
+
         <!--WindowのCloseキャンセル処理に対応する場合は、WindowCloseCancelBehaviorの使用を検討してください-->
-        
+
     </i:Interaction.Triggers>
 
-    <Window.Resources>
-    </Window.Resources>
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="237*"/>
-        </Grid.ColumnDefinitions>
-        <Canvas Grid.ColumnSpan="1">
-            <TextBlock Text="ユーザー名" Foreground="white"  FontSize="40" Canvas.Left="180" Canvas.Top="105" Height="55" Width="175"/>
-            <Button Background="White" Canvas.Left="240" Canvas.Top="495" Content="ログイン" Height="50" Width="230" FontSize="30" Command="{Binding LogonCommand}"/>
-            <ComboBox Width="230" Canvas.Left="240" Canvas.Top="165" Height="50" Text="{Binding User.Name}">
-                <TextBlock Text="タロウマル" Width="350" Canvas.Left="180" Canvas.Top="165" Height="55" Background="black" Foreground="white"  FontSize="40"/>
-                <TextBlock Text="{Binding LoginModel._Name}" Width="350" Canvas.Left="180" Canvas.Top="165" Height="55" Background="black" Foreground="white"  FontSize="40"/>
-                <TextBlock Text="3" Width="350" Canvas.Left="180" Canvas.Top="165" Height="55" Background="black" Foreground="white"  FontSize="40"/>
-            </ComboBox>
-            
-        </Canvas>
-        <TextBlock Text="パスワード" Foreground="white"  FontSize="40" Grid.Column="1" Margin="92,295,361,246"/>
-        <TextBox Text="{Binding User.Password}" Background="black" Foreground="white"  FontSize="40" Grid.Column="1" Margin="137,355,266,186"/>
+
+        
+        <StackPanel Grid.ColumnSpan="2">
+            <TextBlock Text="Name:"/>
+            <TextBox Text="{Binding Employee.Name}"/>
+            <TextBlock Text="Password:"/>
+            <TextBox Text="{Binding Employee.Password}"/>
+            <Button Content="Logon" Command="{Binding LogonCommand}"/>
+        </StackPanel>
+
     </Grid>
+
 </Window>

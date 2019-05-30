@@ -23,15 +23,13 @@ namespace ThxLivet.Views
      */
      
     /// <summary>
-    /// Window1.xaml の相互作用ロジック
+    /// 事例抽出.xaml の相互作用ロジック
     /// </summary>
-    public partial class Login : Window
+    public partial class Jirei : Window
     {
-        public Login()
+        public Jirei()
         {
             InitializeComponent();
         }
-
-     
     }
 }
