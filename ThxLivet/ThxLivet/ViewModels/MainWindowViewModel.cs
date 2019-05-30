@@ -62,6 +62,19 @@ namespace ThxLivet.ViewModels
 
         public void Initialize()
         {
+            if (SessionService.Instance.IsAuthorized == false)
+            {
+                var message = new TransitionMessage(typeof(Views.kansyaka_donyuuryoku), new LogonViewModel(), TransitionMode.Modal, "ShowLogon");
+                Messenger.Raise(message);
+            }
+
+            // ログオンに成功していない場合は再度ログオン画面を表示。
+            //if (SessionService.Instance.IsAuthorized == false)
+            //{
+            //    this.Initialize();
+            //}
+
+            this.AuthorizedUser = SessionService.Instance.AuthorizedUser;
         }
     }
 }
