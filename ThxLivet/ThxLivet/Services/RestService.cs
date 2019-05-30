@@ -20,16 +20,16 @@ namespace ThxLivet.Services
             this.Client = new HttpClient();
             this.BaseUrl = "https://localhost:5001";
         }
-        public async Task<LoginModel> LogonAsync(LoginModel user)
+        public async Task<Employee> LogonAsync(Employee employee)
         {
-            var jObject = JsonConvert.SerializeObject(user);
+            var jObject = JsonConvert.SerializeObject(employee);
 
             //Make Json object into content type
             var content = new StringContent(jObject);
             //Adding header of the contenttype
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            LoginModel responseUser = null;
+            Employee responseUser = null;
             try
             {
                 var response = await Client.PostAsync(this.BaseUrl + "/api/Logon", content);
@@ -37,7 +37,7 @@ namespace ThxLivet.Services
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
-                    responseUser = JsonConvert.DeserializeObject<LoginModel>(responseContent);
+                    responseUser = JsonConvert.DeserializeObject<Employee>(responseContent);
                 }
             }
             catch (Exception e)
@@ -47,5 +47,7 @@ namespace ThxLivet.Services
             }
             return responseUser;
         }
+
+        
     }
 }

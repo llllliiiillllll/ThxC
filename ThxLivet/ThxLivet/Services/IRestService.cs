@@ -9,6 +9,6 @@ namespace ThxLivet.Services
 {
     interface IRestService
     {
-        Task<LoginModel> LogonAsync(LoginModel user);
+        Task<Employee> LogonAsync(Employee employee);
     }
 }

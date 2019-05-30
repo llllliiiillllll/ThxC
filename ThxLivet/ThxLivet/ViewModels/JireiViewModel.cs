@@ -10,20 +10,20 @@ using Livet.Messaging;
 using Livet.Messaging.IO;
 using Livet.EventListeners;
 using Livet.Messaging.Windows;
-using ThxLivet.ViewModels;
 
-namespace misakitry.ViewModels
+using ThxLivet.Models;
+
+namespace ThxLivet.ViewModels
 {
-    public class MainWindowViewModel : ViewModel
+    public class JireiViewModel : ViewModel
     {
         /* コマンド、プロパティの定義にはそれぞれ 
          * 
-         *  lvcom    : ViewModelCommand
-         *  lvcomn   : ViewModelCommand(CanExecute無)
-         *  llcom    : ListenerCommand(パラメータ有のコマンド)
-         *  llcomn   : ListenerCommand(パラメータ有のコマンド・CanExecute無)
-         *  lprop    : 変更通知プロパティ
-         *  lsprop   : 変更通知プロパティ(ショートバージョン)
+         *  lvcom   : ViewModelCommand
+         *  lvcomn  : ViewModelCommand(CanExecute無)
+         *  llcom   : ListenerCommand(パラメータ有のコマンド)
+         *  llcomn  : ListenerCommand(パラメータ有のコマンド・CanExecute無)
+         *  lprop   : 変更通知プロパティ(.NET4.5ではlpropn)
          *  
          * を使用してください。
          * 
@@ -58,12 +58,9 @@ namespace misakitry.ViewModels
          * LivetのViewModelではプロパティ変更通知(RaisePropertyChanged)やDispatcherCollectionを使ったコレクション変更通知は
          * 自動的にUIDispatcher上での通知に変換されます。変更通知に際してUIDispatcherを操作する必要はありません。
          */
-
+         
         public void Initialize()
         {
-            var message = new TransitionMessage(typeof(ThxLivet.Views.Login), new LoginViewModel(), TransitionMode.Modal, "ShowLogon");
-            Messenger.Raise(message);
-            
         }
     }
 }
