@@ -10,6 +10,11 @@
 
 
 
+    <Window.Background>
+        <ImageBrush ImageSource = "../Image/emoi_haikei.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+
+
     <Window.DataContext>
         <vm:LoginViewModel/>
     </Window.DataContext>
@@ -40,6 +45,7 @@
 
 
     <Grid>
+
         
         <StackPanel Grid.ColumnSpan="2">
             <TextBlock Text="Name:"/>
@@ -48,6 +54,7 @@
             <TextBox Text="{Binding Employee.Password}"/>
             <Button Content="Logon" Command="{Binding LogonCommand}"/>
         </StackPanel>
+
     </Grid>
 
 </Window>
