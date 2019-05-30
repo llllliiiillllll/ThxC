@@ -30,6 +30,6 @@ namespace ThxLivet.Views
         public kansyaka_donyuuryoku()
         {
             InitializeComponent();
-        }
+         }
     }
 }
