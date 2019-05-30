@@ -1,0 +1,68 @@
+﻿<Window x:Class="ThxLivet.Views.Keijiban"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
+        xmlns:v="clr-namespace:ThxLivet.Views"
+        xmlns:vm="clr-namespace:ThxLivet.ViewModels"
+        Title="Keijiban" Height="350" Width="525">
+    
+    <Window.DataContext>
+        <vm:KeijibanViewModel/>
+    </Window.DataContext>
+    
+     <i:Interaction.Triggers>
+     
+     	<!--Viewに特別な要件が存在しない限りは、トリガーやアクションの自作にこだわらず積極的にコードビハインドを使いましょう -->
+    	<!--Viewのコードビハインドは、基本的にView内で完結するロジックとViewModelからのイベントの受信(専用リスナを使用する)に限るとトラブルが少なくなります -->
+    	<!--Livet1.1からはコードビハインドでViewModelのイベントを受信するためのWeakEventLisnterサポートが追加されています --> 
+        
+        <!--WindowのContentRenderedイベントのタイミングでViewModelのInitializeメソッドが呼ばれます-->
+        <i:EventTrigger EventName="ContentRendered">
+            <l:LivetCallMethodAction MethodTarget="{Binding}" MethodName="Initialize"/>
+        </i:EventTrigger>
+
+        <!--Windowが閉じたタイミングでViewModelのDisposeメソッドが呼ばれます-->
+        <i:EventTrigger EventName="Closed">
+            <l:DataContextDisposeAction/>
+        </i:EventTrigger>
+
+        <!--WindowのCloseキャンセル処理に対応する場合は、WindowCloseCancelBehaviorの使用を検討してください-->
+
+    </i:Interaction.Triggers>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="344*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="173*" />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Name="dataGrid" AutoGenerateColumns="False" Margin="16,10,10,10" >
+            //SelectionChanged="DataGrid_SelectionChanged"//
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="送信日" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="To" Binding="{Binding AuthMember}" />
+                <DataGridTextColumn Header="From" Binding="{Binding AuthMember}" />
+                <DataGridTextColumn Header="タイトル" Binding="{Binding AuthMember}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DockPanel Grid.Column="2" >
+
+            <StackPanel >
+                <Button Content="マニュアル" Margin="10" />
+                <Button Content="カード作成" Margin="10" />
+                <Button Content="To" Margin="10" />
+                <Button Content="枚数集計" Margin="10" />
+                <Button Content="部署関連情報" Margin="10" />
+                <Button Content="事例抽出" Margin="10" />
+                <Button Content="アカウント管理" Margin="10" />
+                <Button Content="部署・課管理" Margin="10" />
+                <Button Content="業務関連度" Margin="10" />
+                <Button Content="ログアウト" Margin="10" />
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>
