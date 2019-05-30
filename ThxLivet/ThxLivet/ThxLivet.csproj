@@ -54,10 +54,24 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\K-dsho.cs" />
+    <Compile Include="ViewModels\GyouMu.cs" />
+    <Compile Include="Views\GyouMu.xaml.cs">
+      <DependentUpon>GyouMu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\K-dsho.xaml.cs">
       <DependentUpon>K-dsho.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\MisuSyukei.xaml.cs">
+      <DependentUpon>MisuSyukei.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Syukei.xaml.cs">
+      <DependentUpon>Syukei.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\GyouMu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\K-dsho.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,6 +95,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\MisuSyukei.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Syukei.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Model.cs" />

@@ -47,7 +47,7 @@
          Text="タイトルを入れてください。" FontSize="25" Canvas.Left="50" Canvas.Top="361" Height="53" Width="496" TextChanged="TextBox_TextChanged" />
             <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"
                 Text="文字を入力してください。" FontSize="25" Canvas.Left="47" Canvas.Top="455" Height="129" Width="499" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.578,1.511" />
-            <Button Content="戻る" FontSize="25" Width="104" Click="Button_Click" Canvas.Left="263" Canvas.Top="694" Height="50" />
+            <Button Content="戻る" FontSize="25" Width="104" Click="Button_Click" Canvas.Left="227" Canvas.Top="682" Height="50" />
             <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"
                 Text="To:" FontSize="25" Canvas.Left="370" Canvas.Top="110" Height="60" Width="154" TextChanged="TextBox_TextChanged" RenderTransformOrigin="0.805,0.786" />
             <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"

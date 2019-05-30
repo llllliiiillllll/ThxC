@@ -1,0 +1,70 @@
+﻿<Window x:Class="ThxLivet.Views.KansyaKa-doNyuryoku"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
+        xmlns:v="clr-namespace:ThxLivet.Views"
+        xmlns:vm="clr-namespace:ThxLivet.ViewModels"
+        Title="MainWindow" Height="1012.296" Width="1049">
+    <Window.Background>
+        <ImageBrush ImageSource = "C:\Users\u-kazuki\Downloads\paty_hamedorikun.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <i:Interaction.Triggers>
+
+        <!--Viewに特別な要件が存在しない限りは、トリガーやアクションの自作にこだわらず積極的にコードビハインドを使いましょう -->
+        <!--Viewのコードビハインドは、基本的にView内で完結するロジックとViewModelからのイベントの受信(専用リスナを使用する)に限るとトラブルが少なくなります -->
+        <!--Livet1.1からはコードビハインドでViewModelのイベントを受信するためのWeakEventLisnterサポートが追加されています -->
+
+        <!--WindowのContentRenderedイベントのタイミングでViewModelのInitializeメソッドが呼ばれます-->
+        <i:EventTrigger EventName="ContentRendered">
+            <l:LivetCallMethodAction MethodTarget="{Binding}" MethodName="Initialize"/>
+        </i:EventTrigger>
+
+        <!--Windowが閉じたタイミングでViewModelのDisposeメソッドが呼ばれます-->
+        <i:EventTrigger EventName="Closed">
+            <l:DataContextDisposeAction/>
+        </i:EventTrigger>
+
+        <!--WindowのCloseキャンセル処理に対応する場合は、WindowCloseCancelBehaviorの使用を検討してください-->
+
+    </i:Interaction.Triggers>
+
+    <Grid Margin="69,0,-17,-12">
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"
+            Text="削除" FontSize="50" Height="112" Width="178" TextChanged="TextBox_TextChanged" Margin="563,251,0,0" RenderTransformOrigin="0.51,0.278" />
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"
+            Text="" FontSize="25" Height="100" Width="372" TextChanged="TextBox_TextChanged" Margin="167,752,0,0" />
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"
+            Text="作成" FontSize="50" Height="90" Width="156" TextChanged="TextBox_TextChanged" Margin="537,761,0,0" RenderTransformOrigin="0.5,0.5" >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.728"/>
+                    <RotateTransform Angle="1.597"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <ComboBox Margin="71,247,430,630" Text="関連度詳細" FontSize="25">
+            <ListBox Name="list1"  >
+                <ListBoxItem Content="item1"/>
+                <ListBoxItem Content="item2"/>
+                <ListBoxItem Content="item3"/>
+            </ListBox>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"
+            Text="" FontSize="25" Height="100" Width="388" TextChanged="TextBox_TextChanged" Margin="149,560,0,0" />
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="50" Height="97" Width="163" TextChanged="TextBox_TextChanged" Margin="541,562,0,0" RenderTransformOrigin="0.5,0.5" Text="変更" >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.662"/>
+                    <RotateTransform Angle="-0.015"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+    </Grid>
+
+</Window>
