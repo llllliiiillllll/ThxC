@@ -28,7 +28,7 @@ namespace ThxLivet.ViewModels
          * を使用してください。
          * 
          * Modelが十分にリッチであるならコマンドにこだわる必要はありません。
-         * View側のコードビハインドを使用しないMVVMパターンiの実装を行う場合でも、ViewModelにメソッドを定義し、
+         * View側のコードビハインドiを使用しないMVVMパターンiの実装を行う場合でも、ViewModelにメソッドを定義し、
          * LivetCallMethodActionなどから直接メソッドを呼び出してください。
          * 
          * ViewModelのコマンドを呼び出せるLivetのすべてのビヘイビア・トリガー・アクションは
