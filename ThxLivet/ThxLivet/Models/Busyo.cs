@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 using Livet;
+using ThxLivet.Services;
+using Newtonsoft.Json;
 
 namespace ThxLivet.Models
 {
@@ -13,7 +15,7 @@ namespace ThxLivet.Models
          * NotificationObjectはプロパティ変更通知の仕組みを実装したオブジェクトです。
          */
 
-        #region
+        #region Id
         private int _Id;
 
         public int Id
@@ -30,7 +32,7 @@ namespace ThxLivet.Models
         }
         #endregion
 
-        #region
+        #region CD
         private int _CD;
 
         public int CD
@@ -48,7 +50,7 @@ namespace ThxLivet.Models
 
         #endregion
 
-        #region
+        #region BusyoName
         private string _BusyoName;
 
         public string BusyoName
@@ -67,7 +69,7 @@ namespace ThxLivet.Models
 
         #endregion
 
-        #region
+        #region Power
 
         private bool _Power;
 

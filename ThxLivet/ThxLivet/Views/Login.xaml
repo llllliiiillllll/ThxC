@@ -35,7 +35,7 @@
             <l:DataContextDisposeAction/>
         </i:EventTrigger>
 
-        <l:InteractionMessageTrigger MessageKey="ShowLogon" Messenger="{Binding Messenger}">
+        <l:InteractionMessageTrigger MessageKey="Authorized" Messenger="{Binding Messenger}">
             <l:WindowInteractionMessageAction/>
         </l:InteractionMessageTrigger>
 

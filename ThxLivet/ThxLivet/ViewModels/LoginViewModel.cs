@@ -11,6 +11,7 @@ using Livet.Messaging.IO;
 using Livet.EventListeners;
 using Livet.Messaging.Windows;
 
+using System.Windows;
 using ThxLivet.Models;
 
 namespace ThxLivet.ViewModels
@@ -18,18 +19,18 @@ namespace ThxLivet.ViewModels
     public class LoginViewModel : ViewModel
     {
         
-        #region UserProperty
-        private Employee _User;
+        #region EmployeeProperty
+        private Employee _Employee;
 
         public Employee Employee
         {
             get
-            { return _User; }
+            { return _Employee; }
             set
             {
-                if (_User == value)
+                if (_Employee == value)
                     return;
-                _User = value;
+                _Employee = value;
                 RaisePropertyChanged();
             }
         }
