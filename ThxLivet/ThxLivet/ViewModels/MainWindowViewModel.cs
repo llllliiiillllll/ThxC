@@ -21,6 +21,7 @@ namespace misakitry.ViewModels
         public void Initialize()
         {
             var message = new TransitionMessage(typeof(ThxLivet.Views.Login), new LoginViewModel(), TransitionMode.Modal, "ShowLogon");
+            
             Messenger.Raise(message);
             
         }

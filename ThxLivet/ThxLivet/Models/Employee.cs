@@ -129,9 +129,9 @@ namespace ThxLivet.Models
         #region Ka
 
 
-        private int _Ka;
+        private Ka _Ka;
         [JsonProperty("Ka")]
-        public int Ka
+        public Ka Ka
         {
             get
             { return _Ka; }
