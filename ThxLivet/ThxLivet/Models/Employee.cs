@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Livet;
-using Newtonsoft.Json;
 using ThxLivet.Services;
+using Newtonsoft.Json;
+
 
 namespace ThxLivet.Models
 {
@@ -14,7 +15,7 @@ namespace ThxLivet.Models
         /*
          * NotificationObjectはプロパティ変更通知の仕組みを実装したオブジェクトです。
          */
-        #region
+        #region Id
         private int _Id;
 
         public int Id
@@ -31,7 +32,7 @@ namespace ThxLivet.Models
         }
         #endregion
 
-        #region
+        #region CD
         private int _CD;
 
         public int CD
@@ -49,7 +50,7 @@ namespace ThxLivet.Models
 
         #endregion
 
-        #region
+        #region Name
 
         private string _Name;
         [JsonProperty("Name")]
@@ -68,7 +69,7 @@ namespace ThxLivet.Models
 
         #endregion
 
-        #region
+        #region NameKana
 
         private string _NameKana;
         [JsonProperty("NameKana")]
@@ -87,7 +88,7 @@ namespace ThxLivet.Models
 
         #endregion
 
-        #region
+        #region Password
 
         private string _Password;
         [JsonProperty("Password")]
@@ -125,7 +126,7 @@ namespace ThxLivet.Models
 
         #endregion
 
-        #region
+        #region Ka
 
 
         private int _Ka;

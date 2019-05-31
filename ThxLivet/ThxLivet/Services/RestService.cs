@@ -18,7 +18,7 @@ namespace ThxLivet.Services
         public RestService()
         {
             this.Client = new HttpClient();
-            this.BaseUrl = "https://localhost:5001";
+            this.BaseUrl = "https://localhost:5000";
         }
         public async Task<Employee> LogonAsync(Employee employee)
         {
@@ -29,7 +29,7 @@ namespace ThxLivet.Services
             //Adding header of the contenttype
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            Employee responseUser = null;
+            Employee responseEmployee = null;
             try
             {
                 var response = await Client.PostAsync(this.BaseUrl + "/api/Logon", content);
@@ -37,7 +37,7 @@ namespace ThxLivet.Services
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
-                    responseUser = JsonConvert.DeserializeObject<Employee>(responseContent);
+                    responseEmployee = JsonConvert.DeserializeObject<Employee>(responseContent);
                 }
             }
             catch (Exception e)
@@ -45,7 +45,7 @@ namespace ThxLivet.Services
                 // TODO
                 System.Diagnostics.Debug.WriteLine("Exception in RestService.LogonAsync: " + e);
             }
-            return responseUser;
+            return responseEmployee;
         }
 
         

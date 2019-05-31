@@ -45,7 +45,8 @@
 
         <GridSplitter Grid.Column="1" Width="5" ResizeDirection="Columns"
 VerticalAlignment="Stretch" />
-
+
+
         <DataGrid Name="dataGrid" AutoGenerateColumns="False" Margin="10,10,3,10" >
             //SelectionChanged="DataGrid_SelectionChanged"//
             <DataGrid.Columns>
